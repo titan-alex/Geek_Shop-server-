@@ -14,10 +14,10 @@ const upload = multer({ dest: "./public/img/category/catalog/" });
 
 // Соединение с базой данных
 const connection = mysql.createConnection({
-  host: "127.0.0.1",
-  database: "nature",
-  user: "root",
-  password: "55523891@%"
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
 });
 
 connection.connect(function (err) { if (err) throw err; });
@@ -48,7 +48,7 @@ function isAuth(req, res, next) {
 }
 
 // Запуск веб-сервера по адресу http://localhost:3000
-app.listen(3000)
+app.listen(3005)
 
 /**
  * Маршруты

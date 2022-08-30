@@ -1,2 +1,5 @@
 node_modules
 sass
+.env
+.gitignore
+lecture.md
