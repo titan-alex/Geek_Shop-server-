@@ -13,12 +13,13 @@ const app = express()
 const upload = multer({ dest: "./public/img/category/catalog/" });
 
 require('dotenv').config();
-// Соединение с базой данных
-const connection = mysql.createConnection({
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
+
+const connection = mysql.createConnection(
+{
+ host: process.env.DB_HOST,
+ database: process.env.DB_NAME,
+ user: process.env.DB_USER,
+ password: process.env.DB_PASS,
 });
 
 connection.connect(function (err) { if (err) throw err; });
