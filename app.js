@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
   });
 });
 app.get('/catalog', (req, res) => {
-  connection.query("SELECT * FROM category", (err, data, fields) => {
+  connection.query("SELECT * FROM category WHERE groups = 'category'", (err, data, fields) => {
     if (err) throw err;
     res.render('catalog', {
       'category': data,
@@ -325,7 +325,7 @@ app.post('/cart-del', (req, res) => {
 // КАТЕГОРИИ
 
 app.get('/anime', (req, res) => {
-  connection.query("SELECT * FROM anime", (err, data, fields) => {
+  connection.query("SELECT * FROM category where groups = 'anime'", (err, data, fields) => {
     if (err) throw err;
     res.render('category/anime', {
       'anime': data,
@@ -334,7 +334,7 @@ app.get('/anime', (req, res) => {
   });
 });
 app.get('/games', (req, res) => {
-  connection.query("SELECT * FROM games", (err, data, fields) => {
+  connection.query("SELECT * FROM category where groups = 'games'", (err, data, fields) => {
     if (err) throw err;
     res.render('category/games', {
       'games': data,
@@ -343,7 +343,7 @@ app.get('/games', (req, res) => {
   });
 });
 app.get('/music', (req, res) => {
-  connection.query("SELECT * FROM music", (err, data, fields) => {
+  connection.query("SELECT * FROM category where groups = 'music'", (err, data, fields) => {
     if (err) throw err;
     res.render('category/music', {
       'music': data,
@@ -352,7 +352,7 @@ app.get('/music', (req, res) => {
   });
 });
 app.get('/cartoon', (req, res) => {
-  connection.query("SELECT * FROM cartoon", (err, data, fields) => {
+  connection.query("SELECT * FROM category where groups = 'cartoon'", (err, data, fields) => {
     if (err) throw err;
     res.render('category/cartoon', {
       'cartoon': data,
@@ -361,7 +361,7 @@ app.get('/cartoon', (req, res) => {
   });
 });
 app.get('/fanko_pop', (req, res) => {
-  connection.query("SELECT * FROM fanko_pop", (err, data, fields) => {
+  connection.query("SELECT * FROM category where groups = 'fanko_pop'", (err, data, fields) => {
     if (err) throw err;
     res.render('category/fanko_pop', {
       'fanko_pop': data,
@@ -370,7 +370,7 @@ app.get('/fanko_pop', (req, res) => {
   });
 });
 app.get('/movies', (req, res) => {
-  connection.query("SELECT * FROM movies", (err, data, fields) => {
+  connection.query("SELECT * FROM category where groups = 'movies'", (err, data, fields) => {
     if (err) throw err;
     res.render('category/movies', {
       'movies': data,
@@ -379,7 +379,7 @@ app.get('/movies', (req, res) => {
   });
 });
 app.get('/clothes', (req, res) => {
-  connection.query("SELECT * FROM clothes", (err, data, fields) => {
+  connection.query("SELECT * FROM category where groups = 'clothes'", (err, data, fields) => {
     if (err) throw err;
     res.render('category/clothes', {
       'clothes': data,
