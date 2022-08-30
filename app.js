@@ -12,6 +12,7 @@ const app = express()
 // Путь к директории для загрузок
 const upload = multer({ dest: "./public/img/category/catalog/" });
 
+require('dotenv').config();
 // Соединение с базой данных
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -43,7 +44,7 @@ function isAuth(req, res, next) {
   if (req.session.auth) {
     next();
   } else {
-    res.redirect('/');
+    res.redirect('');
   }
 }
 
