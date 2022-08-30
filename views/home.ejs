@@ -1,0 +1,121 @@
+<%- include('particles/header.ejs') %>
+
+<%- include('particles/navigation.ejs') %>
+
+<div class="home">
+  <div class="home__baner">
+    <div class="home__inf">
+      <h1>OUR.GEEK.SHOP</h1>
+      <p>интернет-магазин</p>
+      <p> для настоящих гиков</p>
+      <a href="/catalog">Каталог</a>
+    </div>
+    <img src="./img/baner.jpg" alt="ERROR">
+  </div>
+</div>
+
+<div class="mini">
+  <img src="./img/sticker1.png" alt="ERROR">
+  <p>Широкий ассортимент</p>
+  <img src="./img/sticker2.png" alt="ERROR">
+  <p>Доставка по всей России</p>
+</div>
+
+<div class="product__menu">
+  <div class="new__products__title">
+    <h2>
+      Меню категорий
+      </h2>
+  </div>
+  <div class="line"></div>
+  <div class="all__category">
+    <div class="all__product">
+      <!-- <img src="./img/all_product.png" alt="ERROR"> -->
+      <h3>Все товары</h3>
+      <ul>
+        <li><a href="/anime">Аниме</a></li>
+        <li><a href="/games">Игры</a></li>
+        <li><a href="/cartoon">Мультфильмы</a></li>
+        <li><a href="/music">К-поп/Музыка</a></li>
+        <li><a href="/fanko_pop">Funko Pop</a></li>
+        <li><a href="/movies">Фильмы</a></li>
+        <li><a href="/clothes">Одежда</a></li>
+      </ul>
+    </div>
+    <div class="cinema">
+      <h3>Кинемотограф</h3>
+      <ul>
+        <li><a href="/anime">Аниме</a></li>
+        <li><a href="/cartoon">Мультфильмы</a></li>
+        <li><a href="/movies">Фильмы</a></li>
+      </ul>
+    </div>
+    <div class="games">
+      <h3>Игры</h3>
+      <ul>
+        <li><a href="/GenshinImpact">Genshin Impact</a></li>
+      </ul>
+    </div>
+    <div class="clothes">
+      <h3>Одежда</h3>
+      <ul>
+        <li><a href="/clothes">Одежда</a></li>
+      </ul>
+    </div>
+    <div class="other">
+      <h3>Прочее</h3>
+      <ul>
+        <li><a href="/fanko_pop">Funko Pop</a></li>
+        <li><a href="/music">К-поп/Музыка</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<div class="new__products">
+  <div class="new__products__title">
+    <h2>
+      <ion-icon name="flame"></ion-icon>Новинки <ion-icon name="flame"></ion-icon>
+      </h3>
+  </div>
+  <div class="line"></div>
+  <% for (let i = 0; i < all_products.length; i++) { %>
+  <div class="container">
+    <div class="product">
+      <div class="image">
+        <a href="<%= all_products[i].href %>/<%=  all_products[i].id %>">
+          <img class="container-img" src="img/product/<%= all_products[i].image %>" alt="ERROR"></a>
+      </div>
+      <div class="info">
+        <h3><%= all_products[i].title %></h3>
+
+        
+        <div class="info-price">
+          <span class="price"><%=  all_products[i].price %> <small>₽</small></span>
+
+
+          <form method="post" action="/cart_add" class="">
+            <input value="<%=  all_products[i].id %>" class="form-group__input" type="text" id="shopping-cart" name="shopping-cart" placeholder="" style="display: none;">
+            <input value="<%=  all_products[i].title %>" class="form-group__input" type="text" id="title" name="title" placeholder="title" style="display: none;">
+            <input value="<%=  all_products[i].description %>" class="form-group__input" type="text" id="description" name="description" placeholder="Описание" style="display: none;">
+            <input value="<%=  all_products[i].image %>" class="form-group__input" type="text" id="image" name="image" placeholder="image" style="display: none;">
+            <input value="<%=  all_products[i].price %>" class="form-group__input" type="text" id="price" name="price" placeholder="price" style="display: none;">
+            <input value="<%=  all_products[i].stars %>" class="form-group__input" type="text" id="stars" name="stars" placeholder="stars" style="display: none;">
+            <input class="form-button-delete" type="submit" value="Добавить">
+          </form>
+        </div>
+        <!-- <p class="info-description"><%=  all_products[i].description %></p> -->
+      </div>
+    </div>
+
+  </div>
+  <% } %>
+</div>
+
+
+<%- include('particles/footer.ejs') %>

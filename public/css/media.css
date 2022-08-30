@@ -1,0 +1,37 @@
+@media (max-width: 700px){
+    .navigation__box{display: block;}
+    .navigation__link_img img{ height: 0px; margin: 0px; }
+    .navigation__link {position: static; display: none;} 
+    .navigation__box img{ width: 30%;}
+    .navigation__link_img__menu img{width: 40%; }
+    .navigation__link_menu{ display: inline-block;}
+    .form_auth_all{ display: inline;}
+    .menu{display: inline-block;} 
+    .navigation{display: none;}
+    .left__box{float: none; margin: 0px; font-size: medium;}
+    .right__box{float: none; margin: 0px; font-size: medium;}
+    .catalog__baner{ display: inline-block;}
+    .catalog__baner h1{font-size: x-large; margin-bottom: 20px;}
+    .home{text-align: center; padding: 0px;}
+    .home__baner{display: inline-block;}
+    .mini{display: block;}
+    .all__product{display: none; }
+    .all__category{margin: 0;}
+    .all__product, .cinema, .games, .clothes, .other{margin: 13px;}
+    .home__inf h1 {margin-top: 20px;}
+    .section__all{ display: block;}
+    .section__left__box img{width:  256px;}
+}
+
+
+
+@media (max-width: 500px){
+    .section__description{ width: 90%;}
+    .navigation__link {position: static; display: none;} 
+    .navigation__link  img{position: static; display: inline-block;}    
+    .contacts__text{ width: 90%;}
+    p{font-size: 14px;}
+}
+@media (max-width:300px){
+    
+}

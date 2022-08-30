@@ -1,0 +1,23 @@
+<div class="new__products">
+    <div class="new__products__title">
+      <h2>
+        <ion-icon name="flame"></ion-icon>Смотрите также <ion-icon name="flame"></ion-icon>
+        </h3>
+    </div>
+    <div class="line"></div>
+    <% for (let i = 0; i < category.length; i++) { %>
+      <div class="container">
+        <div class="product">
+          <div class="image">
+            <a href="<%= category[i].href %>">
+              <img class="container-img" src="./img/category/catalog/<%= category[i].image %>" alt="ERROR"></a>
+          </div>
+          <div class="info">
+            <h3><%= category[i].title %></h3>
+          </div>
+        </div>
+    
+      </div>
+      <% if(i==2) break %>
+      <% } %>
+  </div>
