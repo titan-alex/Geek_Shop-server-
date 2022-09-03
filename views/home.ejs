@@ -10,7 +10,7 @@
       <p> для настоящих гиков</p>
       <a href="/catalog">Каталог</a>
     </div>
-    <img src="./img/baner.jpg" alt="ERROR">
+    <img src="./img/bodyguard.png" alt="ERROR">
   </div>
 </div>
 
@@ -101,11 +101,11 @@
 
           <form method="post" action="/cart_add" class="">
             <input value="<%=  all_products[i].id %>" class="form-group__input" type="text" id="shopping-cart" name="shopping-cart" placeholder="" style="display: none;">
+            <input value="<%=  all_products[i].href %>" class="form-group__input" type="text" id="href" name="href" placeholder="href" style="display: none;">
             <input value="<%=  all_products[i].title %>" class="form-group__input" type="text" id="title" name="title" placeholder="title" style="display: none;">
             <input value="<%=  all_products[i].description %>" class="form-group__input" type="text" id="description" name="description" placeholder="Описание" style="display: none;">
             <input value="<%=  all_products[i].image %>" class="form-group__input" type="text" id="image" name="image" placeholder="image" style="display: none;">
             <input value="<%=  all_products[i].price %>" class="form-group__input" type="text" id="price" name="price" placeholder="price" style="display: none;">
-            <input value="<%=  all_products[i].stars %>" class="form-group__input" type="text" id="stars" name="stars" placeholder="stars" style="display: none;">
             <input class="form-button-delete" type="submit" value="Добавить">
           </form>
         </div>

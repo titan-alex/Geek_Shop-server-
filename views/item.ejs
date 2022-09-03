@@ -59,13 +59,6 @@
     <input class="form-button-delete" type="submit" value="Удалить">
   </form>
 
-  <form method="post" action="/cart_add" class="form_group_all">
-    <input value="<%= all_products.id %>" class="form-group__input" type="text" id="shopping-cart" name="shopping-cart" placeholder="" style="display: none;">
-    <input value="<%= all_products.title %>" class="form-group__input" type="text" id="title" name="title" placeholder="title" style="display: none;">
-    <input value="<%= all_products.description %>" class="form-group__input" type="text" id="description" name="description" placeholder="Описание" style="display: none;">
-    <input value="<%= all_products.image %>" class="form-group__input" type="text" id="image" name="image" placeholder="image" style="display: none;">
-    <input class="form-button-delete" type="submit" value="Купить">
-  </form>
 </div>
 <% } %>
 <%- include('particles/footer.ejs') %>
