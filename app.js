@@ -406,7 +406,7 @@ app.get('/aot/:id', (req, res) => {
 
       res.render('item', {
         'all_products': data[0],
-        auth: req.session.ayth
+        auth: req.session.auth
       });
     });
 });
@@ -426,7 +426,7 @@ app.get('/DemonSlayer/:id', (req, res) => {
 
       res.render('item', {
         'all_products': data[0],
-        auth: req.session.ayth
+        auth: req.session.auth
       });
     });
 });
@@ -446,7 +446,7 @@ app.get('/OnePanchMan/:id', (req, res) => {
 
       res.render('item', {
         'all_products': data[0],
-        auth: req.session.ayth
+        auth: req.session.auth
       });
     });
 });
@@ -465,7 +465,7 @@ app.get('/GenshinImpact/:id', (req, res) => {
     if (err) throw err;
     res.render('item', {
       'all_products': data[0],
-      auth: req.session.ayth
+      auth: req.session.auth
     });
   });
 });
