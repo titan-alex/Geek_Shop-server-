@@ -282,9 +282,9 @@ app.get('/shopping_cart', isAuth, (req, res) => {
       });
     });
 });
-app.get('/shopping_cart/:id', isAuth, (req, res) => {
+app.get('/shopping_cart/:article', isAuth, (req, res) => {
   connection.query(
-    "SELECT * FROM all_products WHERE id = ?", [req.params.id], (err, data, fields) => {
+    "SELECT * FROM all_products WHERE article = ?", [req.params.article], (err, data, fields) => {
       if (err) throw err;
       res.render('item', {
         'shopping_cart': data,
@@ -301,8 +301,8 @@ app.post('/cart_add', (req, res) => {
       if (err) throw err;
       if (data.length == 0 & req.session.auth==true) {
         connection.query(
-          "INSERT INTO shopping_cart (href, title, description, image, price) VALUES (?, ?, ?, ?, ?)",
-          [[req.body.href], [req.body.title], [req.body.description], [req.body.image], [req.body.price]], (err, data, fields) => {
+          "INSERT INTO shopping_cart (article, href, title, description, image, price) VALUES (?, ?, ?, ?, ?)",
+          [[req.body.article], [req.body.href], [req.body.title], [req.body.description], [req.body.image], [req.body.price]], (err, data, fields) => {
             if (err) throw err;
             console.log(req.body.href);
           });
