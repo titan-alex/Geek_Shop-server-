@@ -282,9 +282,10 @@ app.get('/shopping_cart', isAuth, (req, res) => {
       });
     });
 });
-app.get('/shopping_cart/:article', isAuth, (req, res) => {
+
+app.get('/shopping_cart/:article', (req, res) => {
   connection.query(
-    "SELECT * FROM all_products WHERE article = ?", [req.params.article], (err, data, fields) => {
+    "SELECT * FROM shopping_cart WHERE article = ?", [req.params.article], (err, data, fields) => {
       if (err) throw err;
       res.render('item', {
         'shopping_cart': data,
