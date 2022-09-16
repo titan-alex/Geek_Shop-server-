@@ -287,7 +287,7 @@ app.get('/shopping_cart/:article', (req, res) => {
   connection.query(
     "SELECT * FROM shopping_cart WHERE article = ?", [req.params.article], (err, data, fields) => {
       if (err) throw err;
-      res.render('item', {
+      res.render('item_cart', {
         'shopping_cart': data,
         'all_products': data,
         auth: req.session.auth

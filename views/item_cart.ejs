@@ -1,0 +1,25 @@
+<%- include('particles/header.ejs') %>
+
+<%- include('particles/navigation.ejs') %>
+
+<div class="section">
+  <div class="section__all">
+    <div class="section__left__box">
+      <img src="/img/product/<%= shopping_cart.image %>" alt="ERROR">
+    </div>
+    <div class="section__right__box">
+      <div class="section__inf__item">
+        <h2>
+          <%= shopping_cart.title %>
+        </h2>
+        <div class="section__price">
+          <p><%= shopping_cart.price %> <small>₽</small></p>
+        </div>
+        <p><%= shopping_cart.description %></p>
+        <p><canvas>Уже в корзине</canvas></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('particles/footer.ejs') %>
