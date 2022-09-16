@@ -288,8 +288,8 @@ app.get('/shopping_cart/:id', (req, res) => {
     "SELECT * FROM all_products WHERE article = ?", [req.params.article], (err, data, fields) => {
       if (err) throw err;
       res.render('item', {
-        'shopping_cart': data,
-        'all_products': data,
+        // 'shopping_cart': data,
+        'all_products': data[0],
         auth: req.session.auth
       });
     });
