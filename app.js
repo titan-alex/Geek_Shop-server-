@@ -285,7 +285,7 @@ app.get('/shopping_cart', isAuth, (req, res) => {
 
 app.get('/shopping_cart/:id', (req, res) => {
   connection.query(
-    "SELECT * FROM shopping_cart WHERE article = ?", [req.params.article], (err, data, fields) => {
+    "SELECT * FROM all_products WHERE article = ?", [req.params.article], (err, data, fields) => {
       if (err) throw err;
       res.render('item', {
         'shopping_cart': data,

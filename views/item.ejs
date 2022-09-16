@@ -18,7 +18,7 @@
         <p><%= all_products.description %></p>
         <form method="post" action="/cart_add" class="">
           <input value="<%= all_products.id %>" class="form-group__input" type="text" id="shopping-cart" name="shopping-cart" placeholder="" style="display: none;">
-          <input value="<%=  all_products.article %>" class="form-group__input" type="text" id="article" name="article" placeholder="" style="display: none;">
+          <input value="<%= all_products.article %>" class="form-group__input" type="text" id="article" name="article" placeholder="" style="display: none;">
           <input value="<%= all_products.href %>" class="form-group__input" type="text" id="shopping-cart" name="shopping-cart" placeholder="" style="display: none;">
           <input value="<%= all_products.title %>" class="form-group__input" type="text" id="title" name="title" placeholder="title" style="display: none;">
           <input value="<%= all_products.description %>" class="form-group__input" type="text" id="description" name="description" placeholder="Описание" style="display: none;">
