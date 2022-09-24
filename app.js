@@ -305,8 +305,7 @@ app.post('/cart_add', (req, res) => {
           "INSERT INTO shopping_cart (article, href, title, description, image, price) VALUES (?, ?, ?, ?, ?, ?)",
           [[req.body.article], [req.body.href], [req.body.title], [req.body.description], [req.body.image], [req.body.price]], (err, data, fields) => {
             if (err) throw err;
-            let location = window.location.href;
-            res.redirect(location);
+            res.redirect('back');
           });
       }
       else{

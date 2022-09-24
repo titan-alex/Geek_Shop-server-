@@ -76,6 +76,9 @@
     .mini {
         display: block;
     }
+    .mini img{
+        width: auto;
+    }
 
     .all__product {
         display: none;
@@ -103,6 +106,15 @@
 
     .section__left__box img {
         width: 256px;
+    }
+    .container-img{
+        height: auto;
+    }
+    .container{
+        width: 190px;
+    }
+    .info h3{
+        font-size: medium;
     }
 }
 
